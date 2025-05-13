@@ -68,9 +68,11 @@
 
     /* Main Content */
     #mainContent {
-      margin-left: 100px;
+      margin-left: 10px;
       padding: 20px;
       transition: margin-left 0.3s;
+      margin-top: 50px;
+     
     }
 
     .box {
@@ -91,6 +93,7 @@
       background: #000;
       color: white;
       border-radius: 0;
+      width: 50%;
     }
 
     button {
@@ -115,11 +118,13 @@
       border: 1px solid #444;
       margin-top: 15px;
       border-radius: 0;
+      position: relative;
     }
 
     .assignment img {
       width: 100%;
       margin-top: 10px;
+      margin-bottom: 100px;
       border: 1px solid #333;
     }
 
@@ -146,10 +151,42 @@
       border-top: 1px solid #333;
     }
      .marks{
-background :red;
-       color:white;
-       padding:4px;
-      border-radius:8px;
+       color:#800000;
+       
+      
+     }
+     .marks0{
+      color:#b2be02;
+      
+    }
+     mark{
+      position: absolute;
+      right: 0;
+      padding: 4px;
+      font-weight: 800;
+      background: #111;
+      color: #888;
+     }
+     .txt{
+      background: #444;
+      padding: 10px;
+
+     }
+     a{
+      color: rgb(139, 139, 139);
+      text-decoration: none;
+     }
+     b{
+      opacity: .2;
+     }
+     .date{
+      color: royalblue;
+     }
+     span{
+      color: rgb(60, 255, 0);
+     }
+     .txt0{
+      color: red;
      }
   </style>
 </head>
@@ -179,7 +216,7 @@ background :red;
 
   <!-- Footer -->
   <div id="footer">
-    &copy; 2025 Quorvex Institute
+    &copy; 2025 Quorvex Institute. Powered by <a href="https://quorvexinstitute.vercel.app">Quorvex</a>
   </div>
 
   <script>
@@ -203,20 +240,81 @@ background :red;
       }
       sidebarVisible = !sidebarVisible;
     }
-
+//510073
     const studentData = {
-      "510073": [
-        { title: "HTML Form Assignment", marks: "not submitted" , img: "/images.png" },
-        { title: "CSS Styling Project", marks: "not submitted" , img: "/images.jpeg" },
-        { title: "JS Calculator", marks: "not submitted" , img: "/pic.gif" },
-        { title: "Responsive Layout", marks: "not submitted" , img: "/how4.gif" }
+      "": [
+        { title: "HTML Form Assignment",
+         marks: "N/A" , 
+         img: "/images.png" ,
+         status:"", 
+         instr:"Create a plain html form without css" ,status0:"Pendding",
+         date:"19 May 2025",
+         txt:" Open",
+         txt0:"",
+        code:crypto.randomUUID().slice(0,8).replace("-",'QI')
+        },
+        { title: "CSS Styling Project",
+         marks: "N/A" , img: "/images.jpeg",
+         status:"Not submmited", 
+         instr:"Create a plain html form with css, as shown on the image" ,
+         status0:"",
+         date:"25 May 2025",
+         txt:"",
+         txt0:"Closed",
+         code:crypto.randomUUID().slice(0,10).replace("-",'QI')
+       },
+        { title: "JS Calculator",
+         marks: "N/A" ,
+          img: "/pic.gif",
+         status:"Not submmited" , 
+        instr:"Create a plain html form with css, as shown on the image" ,
+        status0:"" ,
+         code:crypto.randomUUID().slice(0,8).replace("-",'QI'),
+         date:"05 June 2025",
+         txt:" ",
+         txt0:"Closed",
+        },
+        { title: "Responsive Layout", marks: "N/A" , img: "/how4.gif",status:"Not submmited" , instr:"Create a website.",status0:"" ,
+        code:crypto.randomUUID().slice(0,10).replace("-",'QI'),
+        date:"19 May 2025",
+        txt:" ",
+        txt0:"Closed",}
       ],
-      "87654321": [
-        { title: "HTML Tables Task", marks: 78, img: "https://via.placeholder.com/400x200?text=HTML+Tables" },
-        { title: "CSS Grid Page", marks: 80, img: "https://via.placeholder.com/400x200?text=CSS+Grid" },
-        { title: "JS Quiz App", marks: 75, img: "https://via.placeholder.com/400x200?text=JS+Quiz" },
-        { title: "Flexbox Practice", marks: 82, img: "https://via.placeholder.com/400x200?text=Flexbox" }
-      ]
+      "510173": [
+      { title: "HTML Form Assignment",
+       marks: "N/A" , 
+       img: "/images.png" ,
+       status:"", 
+       instr:"Create a plain html form without css" ,status0:"Pendding",
+       date:"19 May 2025"},
+      { title: "CSS Styling Project",
+       marks: "N/A" , img: "/images.jpeg",
+       status:"Not submmited", 
+       date:"10 June 2025",
+       txt:" Open",
+       instr:"Create a plain html form with css, as shown on the image" ,
+       status0:"",
+       
+       code:crypto.randomUUID().slice(0,8).replace("-",'QI')
+     },
+      { title: "JS Calculator",
+      marks: "N/A" , img: "/pic.gif",
+      status:"Not submmited" ,
+      date:"19 June 2025",
+      txt:" Open",
+       instr:"Create a plain html form with css, as shown on the image" ,status0:"",
+      code:crypto.randomUUID().slice(0,10)
+    },
+      { title: "Responsive Layout",
+       marks: "N/A" ,
+        img: "/how4.gif",
+        date:"25 June 2025",
+        txt:" Open",
+        status:"Not submmited" , 
+        instr:"Create a website.",
+        status0:"" ,
+      code:crypto.randomUUID().slice(0,8).replace("-",'QI')}
+    ],
     };
 
     function checkPin() {
@@ -228,13 +326,20 @@ background :red;
         error.style.display = "none";
         container.innerHTML = studentData[pin].map((a, i) => `
           <div class="assignment">
+            <mark>Total = 100 points</mark>
             <h3>Assignment ${i + 1}: ${a.title}</h3>
-            <p>Marks: <strong class="marks">${a.marks}</strong></p>
+            <h4 class="marks">${a.status}</h4>
+            <h4 class="marks0"> ${a.status0}</h4>
+            <p>Marks: <strong >${a.marks}</strong></p>
             <img src="${a.img}" alt="${a.title}">
+            <p class="txt">NOTE: ${a.instr}</p>
+            <p class="date">Due Date: ${a.date} - <span >${a.txt}</span><span class='txt0'>${a.txt0}</span></p>
+           <b> Id: ${a.code}</b>
           </div>
+          <hr/>
         `).join('<hr/>');
       } else {
-        container.innerHTML = "";
+        container.innerHTML = ''
         error.style.display = "block";
       }
     }

@@ -19,6 +19,10 @@
       background: white;
       color: black;
     }
+    .link{
+      background: greenyellow;
+      color: #000;
+    }
     #sidebar {
       position: fixed;
       width: 140px;
@@ -31,7 +35,7 @@
       padding: 40px;
     }
     .btn {
-      background: white;
+      background: rgb(90, 90, 90);
       color: black;
       padding: 10px 20px;
       border: none;
@@ -42,6 +46,20 @@
       background: #222;
       color: white;
     }
+       /* Footer */
+       #footer {
+        margin-left: 200px;
+        background: #000;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        position: fixed;
+        bottom: 0;
+        width: calc(100% - 200px);
+        transition: margin-left 0.3s;
+        box-sizing: border-box;
+        border-top: 1px solid #333;
+      }
   </style>
 </head>
 <body>
@@ -56,7 +74,11 @@
     <p>This is where you'll see your progress, upcoming deadlines, and more.</p>
     <button class="btn"><a href="/index.html" >Go to Assignments</a></button>
     <hr/>
-    <a href="https://a106eu9i.forms.app/quorvexinstitute" >Submit assignment</a>
+    <a class="link" href="https://a106eu9i.forms.app/quorvexinstitute" >Submit assignment</a>
+  </div>
+  <!-- Footer -->
+  <div id="footer">
+    &copy; 2025 Quorvex Institute. Powered by <a href="https://quorvexinstitute.vercel.app">Quorvex</a>
   </div>
 </body>
 </html>
