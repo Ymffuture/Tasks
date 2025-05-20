@@ -33,9 +33,59 @@
     .section {
       margin-bottom: 30px;
     }
+    .load{
+      content: '';
+      position: absolute;
+      height: 50px;
+      width: 50px;
+      text-align: center;
+      right: 50%;
+      top: 50%;
+    
+      border-radius: 50%;
+      border-bottom: #fff dotted 2px;
+    animation: loader 1.5s linear infinite;
+    user-select: none;
+    
+    }
+    @keyframes loader {
+      from{transform: rotate(360deg);}
+    }
+    .load2{
+      content: '';
+      position: absolute;
+      height: 50px;
+      width: 50px;
+      text-align: center;
+      right: 1380px;
+      top: 760px;
+     zoom: 70%;
+      border-radius: 50%;
+     border-bottom: #fff dotted 2px;
+    animation: loader2 1s linear infinite;
+    user-select: none;
+    
+    }
+    @keyframes loader2 {
+      from{transform: rotate(-360deg);}
+    }
+    .loadr{
+      content: '';
+      
+      user-select: none;
+      position: absolute;
+      height: 100vh;
+      width: 100%;
+background: rgb(0, 0, 0);
+
+    }
   </style>
 </head>
 <body>
+  <div class="loadr" id="loader">
+    <div class="load"></div>
+    <div class="load2"></div>
+  </div>
   <div id="sidebar">
     <h2 style="text-align: center; font-size: 16px;">Quorvex</h2>
     <a href="dashboard.html">Dashboard</a>
@@ -51,6 +101,12 @@
       <p>We aim to bridge the gap between learning and application, helping students become real-world problem solvers.</p>
     </div>
   </div>
+  <script>
+    const loader = document.getElementById('loader');
+   setTimeout(()=>{
+    loader.style.display = 'none';
+   },3000)
+  </script>
 </body>
 </html>
 
